@@ -1,0 +1,45 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px !important;
+  padding-top: 20px;
+  background-color: #343a40;
+  color: #fff;
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #495057;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-profile h6,
+.user-profile p {
+  margin: 0;
+}
+
+.nav-link {
+  padding: 8px 20px;
+  color: #adb5bd;
+}
+
+.sidebar a:hover {
+  background-color: #d9534f; /* Change to your desired hover color */
+  color: #fff;
+}
+
+
+/* Add more styling as needed for specific sections or components */

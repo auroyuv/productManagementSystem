@@ -1,0 +1,159 @@
+.product_table {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product_table h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+thead th {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td:first-child {
+  border-left: 1px solid #ddd;
+}
+
+tbody td:last-child {
+  border-right: 1px solid #ddd;
+}
+
+tbody td:hover {
+  background-color: #f9f9f9;
+}
+
+.productButton {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.delete_Product_Button {
+  margin-top: 5px;
+  background-color: #ff5252;
+  width: 60px;
+  color: #fff;
+  margin-right: 8px;
+}
+
+.edit_Product_Button {
+  text-decoration: none;
+  width: 60px;
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.add_button_container {
+  text-align: right;
+}
+
+.add_Product_Button {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.add_Product_Button:hover {
+  background-color: #45a049;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 2px solid #4caf50;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.add_container {
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.row-container {
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.upload_image {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.upload_image:hover {
+  background-color: #45a049;
+}

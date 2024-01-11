@@ -1,0 +1,28 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .dashboard-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-section {
+    margin-bottom: 40px;
+  }
+  
+  .section-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-text {
+    font-size: 16px;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+  

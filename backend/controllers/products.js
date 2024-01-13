@@ -4,6 +4,7 @@ const productModel = require('../schema/productSchema')
 const multer = require('multer')
 const path = require('path')
 
+
 // Get product List
 Router.get('/getProductList', async (req, res) => {
   try {
@@ -16,6 +17,7 @@ Router.get('/getProductList', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 // Get product Details
 Router.get('/getProductDetails', async (req, res) => {
@@ -39,7 +41,7 @@ Router.get('/getProductDetails', async (req, res) => {
 });
 
 
-// Storage for image files 
+// Storage for products image files 
 const storage = multer.diskStorage({
   destination: (req, res, cb) => {
     cb(null, './uploads/products')
@@ -50,6 +52,7 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({ storage: storage })
+
 
 // Upload image to uploads folder
 Router.post('/uploadImage/:id', async (req, res, next) => {
@@ -79,7 +82,6 @@ Router.post('/uploadImage/:id', async (req, res, next) => {
 
 // Add a product to the mongoDB
 Router.post('/addProduct', async (req, res) => {
-
   try {
     const currentAdmin = req.user;
 
@@ -93,7 +95,6 @@ Router.post('/addProduct', async (req, res) => {
       admin: currentAdmin.adminId,
       reviews: [{}],  
     });
-
 
     const product = await newProduct.save();
 
@@ -123,7 +124,7 @@ Router.put('/modifyProduct/:id', async (req, res) => {
 
   try {
     const product = await productModel.findOneAndUpdate(
-      { _id: productId }, // Query criteria to find the specific product
+      { _id: productId },
       {
         $set: {
           name,
@@ -150,7 +151,6 @@ Router.put('/modifyProduct/:id', async (req, res) => {
 });
 
 
-
 // Delete product by product ID
 Router.delete("/deleteProduct/:id", async (req, res) => {
 
@@ -171,8 +171,6 @@ Router.delete("/deleteProduct/:id", async (req, res) => {
 })
 
 
-
-
 // Get product by product ID
 Router.get('/getProduct/:productId', async (req, res) => {
   const productId = req.params.productId;
@@ -191,7 +189,5 @@ Router.get('/getProduct/:productId', async (req, res) => {
   }
 });
 
+
 module.exports = Router
-
-
-

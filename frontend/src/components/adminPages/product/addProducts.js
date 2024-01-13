@@ -26,7 +26,6 @@ export default function AddProducts() {
     setFileName("");
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -70,7 +69,6 @@ export default function AddProducts() {
       productQuantity,
       productCategory,
       weight,
-
     }, {
       headers: {
         Authorization: `Bearer ${storedToken}`
@@ -120,7 +118,6 @@ export default function AddProducts() {
                 type="text"
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
-                
               />
             </div>
             <div>
@@ -128,7 +125,6 @@ export default function AddProducts() {
               <select
                 value={productCategory}
                 onChange={(e) => setProductCategory(e.target.value)}
-                
               >
                 <option value="">Select Category</option>
                 <option value="smartphone">Smartphone</option>
@@ -140,14 +136,11 @@ export default function AddProducts() {
                 <option value="toys">Toys</option>
               </select>
             </div>
-
           </div>
-
           <label htmlFor="productDescription">Product Description: </label>
           <textarea
             value={productDescription}
             onChange={(e) => setProductDescription(e.target.value)}
-            
           ></textarea>
 
           <div className="row-container">
@@ -156,7 +149,6 @@ export default function AddProducts() {
               <select
                 value={priceSymbol}
                 onChange={(e) => setPriceSymbol(e.target.value)}
-                
               >
                 <option value="">Select Price Symbol</option>
                 <option value="$">USD</option>
@@ -170,11 +162,9 @@ export default function AddProducts() {
                 type="number"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                
               />
             </div>
           </div>
-
           <div className="row-container">
             <div>
               <label htmlFor="productQuantity">Product Quantity: </label>
@@ -182,21 +172,16 @@ export default function AddProducts() {
                 type="number"
                 value={productQuantity}
                 onChange={(e) => setProductQuantity(e.target.value)}
-                
               />
             </div>
-
-
             <div>
               <label htmlFor="weight">Weight in grams: </label>
               <input
                 type="number"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                
               />
             </div>
-
           </div>
           <div className="file-input-container">
             <input type="file" name="image" className="upload_image" ref={fileInput} onChange={saveFile}></input>

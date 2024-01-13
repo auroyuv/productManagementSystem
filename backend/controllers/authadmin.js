@@ -4,7 +4,6 @@ const path = require('path')
 const adminModel = require('../schema/adminSchema')
 
 
-
 // get admin image and username
 Router.get('/getAdminUser/:email', async (req, res) => {
     const email = req.params.email;

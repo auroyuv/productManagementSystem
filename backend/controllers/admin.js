@@ -7,8 +7,6 @@ const path = require('path')
 const adminModel = require('../schema/adminSchema')
 
 
-
-
 // Registering admin
 Router.post('/register', async (req, res) => {
     const username = req.body.userName;
@@ -62,6 +60,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
+
 // Upload image to uploads folder
 Router.post('/uploadProfileImage/:id', async (req, res, next) => {
     const id = req.params.id;
@@ -92,8 +91,6 @@ Router.post('/uploadProfileImage/:id', async (req, res, next) => {
     }else{
         res.status(200).json({message:"user not found"})
     }
-
-
 });
 
 
@@ -133,9 +130,6 @@ Router.post('/login', async (req, res) => {
     return res.status(500).send("Error fetching data");
   }
 });
-
-
-
 
 
 module.exports = Router

@@ -55,6 +55,12 @@ tbody td:hover {
   width: 60px;
   color: #fff;
   margin-right: 8px;
+  display: block;
+}
+
+.delete_Product_Button:hover{
+  background-color: #f00a0a;
+
 }
 
 .edit_Product_Button {

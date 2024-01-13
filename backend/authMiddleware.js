@@ -10,7 +10,6 @@ const verifyToken = (req, res, next) => {
 
   const [bearer, token] = authHeader.split(' ').map(value => value.trim());
 
-
   if (bearer !== 'Bearer' || !token) {
     return res.status(401).json({ message: 'Unauthorized - Invalid Token Format' });
   }

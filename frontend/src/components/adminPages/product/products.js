@@ -5,7 +5,6 @@ import defaultProductImage from '../../../assets/noImage.png';
 import Swal from 'sweetalert2';
 
 
-
 export default function Products() {
 
   const [products, setProducts] = useState([])

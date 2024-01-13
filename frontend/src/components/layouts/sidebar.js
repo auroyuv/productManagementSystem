@@ -12,7 +12,6 @@ const Sidebar = () => {
   const storedToken = localStorage.getItem('token')
   const emailId = localStorage.getItem('emailId')
 
-
   useEffect(() => {
     axios.get(`http://localhost:3002/authadmin/getAdminUser/${emailId}`, {
       headers: {

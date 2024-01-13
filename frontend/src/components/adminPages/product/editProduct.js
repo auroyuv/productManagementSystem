@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams  } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
+
 export default function EditProduct() {
-    const navigate  = useNavigate ();
+    const navigate = useNavigate();
     const [productName, setProductName] = useState("");
     const [productDescription, setProductDescription] = useState("");
     const [priceSymbol, setPriceSymbol] = useState("");
@@ -38,7 +39,6 @@ export default function EditProduct() {
                     text: response.data,
                 })
                     .then(() => {
-                        // Redirect to the products page immediately after clicking "OK"
                         navigate("/products");
                     });
             })
@@ -103,15 +103,12 @@ export default function EditProduct() {
                             </select>
                         </div>
                     </div>
-
-
                     <label htmlFor="productDescription">Product Description: </label>
                     <textarea
                         value={productDescription}
                         onChange={(e) => setProductDescription(e.target.value)}
                         required
                     ></textarea>
-
                     <div className="row-container">
                         <div>
                             <label htmlFor="priceSymbol">Price Symbol: </label>

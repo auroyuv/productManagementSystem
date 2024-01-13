@@ -15,7 +15,8 @@ Make sure you have the following software installed on your machine:
 - [MongoDB](https://www.mongodb.com/try/download/community)
 
 # Clone the Repository
-
+git clone https://github.com/auroyuv/productManagementSystem.git
+cd product-management-system
 
 # Install Dependencies
 npm install
@@ -23,7 +24,7 @@ npm install
 # Run the Application
 npm start 
 
-git clone https://github.com/your-username/product-management-system.git
-cd product-management-system
+
+
 
 

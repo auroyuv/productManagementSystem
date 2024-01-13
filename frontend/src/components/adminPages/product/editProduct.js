@@ -11,10 +11,7 @@ export default function EditProduct() {
     const [productCategory, setProductCategory] = useState("");
     const [weight, setWeight] = useState("");
     const storedToken = localStorage.getItem('token')
-
     const { productId } = useParams();
-
-
 
     const handleSubmit = (e) => {
         const priceWithSymbol = priceSymbol + price
@@ -46,7 +43,7 @@ export default function EditProduct() {
             }
         })
             .then((response) => {
-                const data = response.data; 
+                const data = response.data;
                 const currencySymbol = data.price.match(/[^\d]/g).join(''); // Extracts non-numeric characters
                 const numericPrice = parseFloat(data.price.replace(/[^0-9.]/g, '')); // Extracts numeric characters
                 setProductName(data.name);
@@ -88,6 +85,10 @@ export default function EditProduct() {
                                 <option value="smartphone">Smartphone</option>
                                 <option value="cloths">Cloths</option>
                                 <option value="shoes">Shoes</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="home-appliances">Home Appliances</option>
+                                <option value="books">Books</option>
+                                <option value="toys">Toys</option>
                             </select>
                         </div>
                     </div>

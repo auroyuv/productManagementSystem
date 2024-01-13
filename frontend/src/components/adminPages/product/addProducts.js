@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function AddProducts() {
   const [productName, setProductName] = useState("");
@@ -35,6 +36,33 @@ export default function AddProducts() {
 
     const priceWithSymbol = priceSymbol + price
 
+    let errorMessage = null;
+
+    if (!productName.trim()) {
+      errorMessage = 'Product Name is required.';
+    } else if (!productCategory) {
+      errorMessage = 'Please select a category.';
+    } else if (!productDescription.trim()) {
+      errorMessage = 'Product Description is required.';
+    } else if (!priceSymbol || !price.trim()) {
+      errorMessage = 'Price and Symbol are required.';
+    } else if (!productQuantity.trim()) {
+      errorMessage = 'Product Quantity is required.';
+    } else if (!weight.trim()) {
+      errorMessage = 'Weight is required.';
+    } else if (!file && !fileName) {
+      errorMessage = 'Please choose a profile picture.';
+    }
+
+    if (errorMessage) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Validation Error',
+        text: errorMessage,
+      });
+      return false;
+    }
+
     axios.post('http://localhost:3002/product/addProduct', {
       productName,
       productDescription,
@@ -49,7 +77,6 @@ export default function AddProducts() {
       }
     })
       .then((response) => {
-        console.log(response.data.message)
         const id = response.data.productId;
 
         axios.post(`http://localhost:3002/product/uploadImage/${id}`, formData, {
@@ -58,10 +85,13 @@ export default function AddProducts() {
           }
         })
           .then((response) => {
-            console.log(response.data)
             setFile(null);
             setFileName("");
             clearFileInput();
+            Swal.fire({
+              icon: "success",
+              text: "Product added successfully",
+            });
           })
           .catch((error) => {
             console.log(error)
@@ -90,7 +120,7 @@ export default function AddProducts() {
                 type="text"
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
-                required
+                
               />
             </div>
             <div>
@@ -98,7 +128,7 @@ export default function AddProducts() {
               <select
                 value={productCategory}
                 onChange={(e) => setProductCategory(e.target.value)}
-                required
+                
               >
                 <option value="">Select Category</option>
                 <option value="smartphone">Smartphone</option>
@@ -117,7 +147,7 @@ export default function AddProducts() {
           <textarea
             value={productDescription}
             onChange={(e) => setProductDescription(e.target.value)}
-            required
+            
           ></textarea>
 
           <div className="row-container">
@@ -126,7 +156,7 @@ export default function AddProducts() {
               <select
                 value={priceSymbol}
                 onChange={(e) => setPriceSymbol(e.target.value)}
-                required
+                
               >
                 <option value="">Select Price Symbol</option>
                 <option value="$">USD</option>
@@ -140,7 +170,7 @@ export default function AddProducts() {
                 type="number"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                required
+                
               />
             </div>
           </div>
@@ -152,7 +182,7 @@ export default function AddProducts() {
                 type="number"
                 value={productQuantity}
                 onChange={(e) => setProductQuantity(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -163,7 +193,7 @@ export default function AddProducts() {
                 type="number"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                required
+                
               />
             </div>
 

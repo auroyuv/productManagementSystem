@@ -29,10 +29,9 @@ export default function Products() {
             }
           })
           .then((response) => {
-            console.log(response.data);
             Swal.fire({
               title: 'Deleted!',
-              text: 'Your file has been deleted.',
+              text: 'Your product has been deleted.',
               icon: 'success'
             }).then(() => {
               fetchProductList();

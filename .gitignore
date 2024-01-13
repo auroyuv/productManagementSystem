@@ -12,8 +12,8 @@ backend/dist/
 backend/node_modules/
 
 # Ignore user-uploaded content in the uploads folder
-uploads/products/*
-uploads/profile/*
+backend/uploads/products/*
+backend/uploads/profile/*
 
 
 # Ignore logs and runtime data

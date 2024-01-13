@@ -84,8 +84,8 @@ export default function Products() {
         <thead>
           <tr>
             <th>S.No</th>
-            <th>Name</th>
             <th>Image</th>
+            <th>Name</th>
             <th>Description</th>
             <th>Price</th>
             <th>Quantity</th>

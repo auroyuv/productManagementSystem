@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams  } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function EditProduct() {
+    const navigate  = useNavigate ();
     const [productName, setProductName] = useState("");
     const [productDescription, setProductDescription] = useState("");
     const [priceSymbol, setPriceSymbol] = useState("");
@@ -14,6 +16,8 @@ export default function EditProduct() {
     const { productId } = useParams();
 
     const handleSubmit = (e) => {
+
+        e.preventDefault();
         const priceWithSymbol = priceSymbol + price
 
         axios.put(`http://localhost:3002/product/modifyProduct/${productId}`, {
@@ -29,7 +33,14 @@ export default function EditProduct() {
             }
         })
             .then((response) => {
-                console.log(response.data)
+                Swal.fire({
+                    icon: "success",
+                    text: response.data,
+                })
+                    .then(() => {
+                        // Redirect to the products page immediately after clicking "OK"
+                        navigate("/products");
+                    });
             })
             .catch((error) => {
                 console.log(error)

@@ -11,6 +11,11 @@ backend/build/
 backend/dist/
 backend/node_modules/
 
+# Ignore user-uploaded content in the uploads folder
+uploads/products/*
+uploads/profile/*
+
+
 # Ignore logs and runtime data
 logs/
 *.log

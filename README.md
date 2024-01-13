@@ -9,7 +9,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 # Prerequisites
 
 Make sure you have the following software installed on your machine:
-
+https://nodejs.org/
 - [Node.js](https://nodejs.org/) 
 - [npm](https://www.npmjs.com/) 
 - [MongoDB](https://www.mongodb.com/try/download/community)

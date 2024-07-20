@@ -12,7 +12,7 @@ app.use(express.static('./uploads'))
 
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1/productManagement', {
+mongoose.connect('mongodb+srv://auroyuva:2WR2yx7x6hZ5ek5l@test.rfisdng.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
